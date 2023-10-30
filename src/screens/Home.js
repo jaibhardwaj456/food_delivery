@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Navbar } from "../components/Navbar";
 import { Footer } from "./Footer";
 import { Card } from "../components/Card";
+import { foodData } from "../../utils/variables";
 
 export const Home = () => {
   const [search, setSearch] = useState("");
@@ -9,7 +10,7 @@ export const Home = () => {
   const [foodItem, setfoodItem] = useState([]);
 
   const loadData = async () => {
-    let response = await fetch("http://localhost:5000/api/foodData", {
+    let response = await fetch(foodData, {
       method: "POST",
       headers: {
         "Content-type": "application/json",

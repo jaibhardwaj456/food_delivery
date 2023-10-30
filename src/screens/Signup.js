@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { createuser } from "../../utils/variables";
 
 export const Signup = () => {
   const [credentials, setcredentials] = useState({
@@ -10,7 +11,7 @@ export const Signup = () => {
   });
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:5000/api/createuser", {
+    const response = await fetch(createuser, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
